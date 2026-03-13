@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>T-pop Playlist</title>
+
+<style>
+
+body{
+background: linear-gradient(135deg,#0a0f3d,#001a66,#0044ff);
+font-family: Arial, sans-serif;
+color:white;
+text-align:center;
+margin:0;
+padding:40px;
+}
+
+h1{
+font-size:40px;
+text-shadow:0 0 15px #66ccff;
+margin-bottom:40px;
+}
+
+.playlist{
+max-width:400px;
+margin:auto;
+}
+
+.song{
+background:rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+padding:15px;
+margin:15px 0;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,170,255,0.5);
+}
+
+.song p{
+margin-bottom:10px;
+font-weight:bold;
+}
+
+audio{
+width:100%;
+}
+
+.footer{
+margin-top:40px;
+opacity:0.7;
+font-size:12px;
+}
+
+.add-song{
+margin-top:30px;
+}
+
+input{
+padding:8px;
+border-radius:10px;
+border:none;
+margin:5px;
+}
+
+button{
+padding:8px 15px;
+border:none;
+border-radius:15px;
+background:#00c3ff;
+cursor:pointer;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>MY T-POP PLAYLIST 💿</h1>
+
+<div class="playlist" id="playlist">
+
+<div class="song">
+<p>Track 1</p>
+<audio controls>
+<source src="T-pop playlist/song1.mp3.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song">
+<p>Track 2</p>
+<audio controls>
+<source src="T-pop playlist/song2.mp3.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song">
+<p>Track 3</p>
+<audio controls>
+<source src="T-pop playlist/song3.mp3.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="song">
+<p>Track 4</p>
+<audio controls>
+<source src="T-pop playlist/song4.mp3.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</div>
+
+<div class="add-song">
+<h3>Add Song</h3>
+<input type="text" id="songName" placeholder="Song name">
+<input type="text" id="songFile" placeholder="song.mp3">
+<br>
+<button onclick="addSong()">Add</button>
+</div>
+
+<div class="footer">
+made for pinky ✦
+</div>
+
+<script>
+
+function addSong(){
+
+let name=document.getElementById("songName").value
+let file=document.getElementById("songFile").value
+
+if(name && file){
+
+let playlist=document.getElementById("playlist")
+
+let songHTML=`
+<div class="song">
+<p>${name}</p>
+<audio controls>
+<source src="${file}" type="audio/mpeg">
+</audio>
+</div>
+`
+
+playlist.innerHTML += songHTML
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
